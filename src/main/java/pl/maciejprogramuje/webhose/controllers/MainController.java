@@ -20,9 +20,11 @@ public class MainController {
     public Label queryLabel;
     public Button queryButton;
     public Label resultLabel;
+    public TextField apiKeyTextField;
 
     @FXML
     public void initialize() {
+
         queryButton.setOnAction(event -> {
             WebhoseIOClient webhoseClient = WebhoseIOClient.getInstance("5e4f2b3f-7b67-4646-b8ca-a661bc1be8c0");
 
@@ -30,22 +32,28 @@ public class MainController {
             queries.put("q", "stock market language:english");
             queries.put("sort", "crawled");
 
-            JsonElement result = null;
+            JsonElement queryResult = null;
             try {
-                result = webhoseClient.query("filterWebContent", queries);
+                queryResult = webhoseClient.query("filterWebContent", queries);
 
-                System.out.println(result.getAsJsonObject().get("totalResults"));
+                System.out.println(queryResult.getAsJsonObject().get("totalResults"));
 
                 GsonBuilder gsonBuilder = new GsonBuilder();
                 Gson gson = gsonBuilder.create();
-                Results results = gson.fromJson(result.toString(), Results.class);
+                Results results = gson.fromJson(queryResult.toString(), Results.class);
 
                 if (results != null) {
                     System.out.println(results);
 
+                    StringBuilder stringBuilder = new StringBuilder();
+
                     for (int i = 0; i < results.getPosts().length; i++) {
-                        System.out.println(i + ". result: "+results.getPosts()[i].getTitle());
+                        stringBuilder.append(i + 1).append(". queryResult: ").append(results.getPosts()[i].getTitle()).append("\n");
                     }
+
+                    String r = stringBuilder.toString();
+                    System.out.println(r);
+                    resultLabel.setText(r);
                 } else {
                     System.out.println("results NULL");
                 }
