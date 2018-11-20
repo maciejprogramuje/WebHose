@@ -7,9 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import pl.maciejprogramuje.webhose.WebhoseIOClient;
-import pl.maciejprogramuje.webhose.pojos.Post;
-import pl.maciejprogramuje.webhose.pojos.Results;
+import pl.maciejprogramuje.webhose.webhoseio.WebhoseIOClient;
+import pl.maciejprogramuje.webhose.webhoseio.pojos.Results;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -24,8 +23,6 @@ public class MainController {
 
     @FXML
     public void initialize() {
-        System.out.println("initialize");
-
         queryButton.setOnAction(event -> {
             WebhoseIOClient webhoseClient = WebhoseIOClient.getInstance("5e4f2b3f-7b67-4646-b8ca-a661bc1be8c0");
 
@@ -43,12 +40,14 @@ public class MainController {
                 Gson gson = gsonBuilder.create();
                 Results results = gson.fromJson(result.toString(), Results.class);
 
-                if (results == null) {
-                    System.out.println("results NULL");
-                } else {
+                if (results != null) {
+                    System.out.println(results);
+
                     for (int i = 0; i < results.getPosts().length; i++) {
                         System.out.println(i + ". result: "+results.getPosts()[i].getTitle());
                     }
+                } else {
+                    System.out.println("results NULL");
                 }
             } catch (URISyntaxException | IOException e) {
                 e.printStackTrace();

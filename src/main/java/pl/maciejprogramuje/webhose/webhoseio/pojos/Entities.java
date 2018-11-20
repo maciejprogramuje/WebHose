@@ -1,4 +1,6 @@
-package pl.maciejprogramuje.webhose.pojos;
+package pl.maciejprogramuje.webhose.webhoseio.pojos;
+
+import java.util.Arrays;
 
 public class Entities {
     private Person[] persons;
@@ -27,5 +29,14 @@ public class Entities {
 
     public void setLocations(Location[] locations) {
         this.locations = locations;
+    }
+
+    @Override
+    public String toString() {
+        return "Entities{" +
+                "persons=" + Arrays.toString(persons) +
+                ", organizations=" + Arrays.toString(organizations) +
+                ", locations=" + Arrays.toString(locations) +
+                '}';
     }
 }

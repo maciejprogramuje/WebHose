@@ -1,4 +1,4 @@
-package pl.maciejprogramuje.webhose.pojos;
+package pl.maciejprogramuje.webhose.webhoseio.pojos;
 
 public class Organization {
     private String name;
@@ -18,5 +18,13 @@ public class Organization {
 
     public void setSentiment(String sentiment) {
         this.sentiment = sentiment;
+    }
+
+    @Override
+    public String toString() {
+        return "Organization{" +
+                "name='" + name + '\'' +
+                ", sentiment='" + sentiment + '\'' +
+                '}';
     }
 }

@@ -1,4 +1,6 @@
-package pl.maciejprogramuje.webhose.pojos;
+package pl.maciejprogramuje.webhose.webhoseio.pojos;
+
+import java.util.Arrays;
 
 public class Thread {
     private String uuid;
@@ -171,6 +173,31 @@ public class Thread {
 
     public void setSocial(Social social) {
         this.social = social;
+    }
+
+    @Override
+    public String toString() {
+        return "Thread{" +
+                "uuid='" + uuid + '\'' +
+                ", url='" + url + '\'' +
+                ", site_full='" + site_full + '\'' +
+                ", site='" + site + '\'' +
+                ", site_section='" + site_section + '\'' +
+                ", site_categories=" + Arrays.toString(site_categories) +
+                ", section_title='" + section_title + '\'' +
+                ", title='" + title + '\'' +
+                ", title_full='" + title_full + '\'' +
+                ", published='" + published + '\'' +
+                ", replies_count=" + replies_count +
+                ", participants_count=" + participants_count +
+                ", site_type='" + site_type + '\'' +
+                ", country='" + country + '\'' +
+                ", spam_score=" + spam_score +
+                ", main_image='" + main_image + '\'' +
+                ", performance_score=" + performance_score +
+                ", domain_rank=" + domain_rank +
+                ", social=" + social +
+                '}';
     }
 }
 

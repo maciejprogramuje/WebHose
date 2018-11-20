@@ -1,6 +1,6 @@
-package pl.maciejprogramuje.webhose.pojos;
+package pl.maciejprogramuje.webhose.webhoseio.pojos;
 
-public class Location {
+public class Person {
     private String name;
     private String sentiment;
 
@@ -18,5 +18,13 @@ public class Location {
 
     public void setSentiment(String sentiment) {
         this.sentiment = sentiment;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", sentiment='" + sentiment + '\'' +
+                '}';
     }
 }

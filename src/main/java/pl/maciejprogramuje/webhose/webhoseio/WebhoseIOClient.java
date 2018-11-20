@@ -1,4 +1,4 @@
-package pl.maciejprogramuje.webhose;
+package pl.maciejprogramuje.webhose.webhoseio;
 
 import java.io.BufferedReader;
 import java.io.IOException;

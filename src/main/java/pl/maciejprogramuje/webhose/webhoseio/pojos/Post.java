@@ -1,4 +1,6 @@
-package pl.maciejprogramuje.webhose.pojos;
+package pl.maciejprogramuje.webhose.webhoseio.pojos;
+
+import java.util.Arrays;
 
 public class Post {
     private Thread[] threads;
@@ -135,5 +137,26 @@ public class Post {
 
     public void setCrawled(String crawled) {
         this.crawled = crawled;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "threads=" + Arrays.toString(threads) +
+                ", uuid='" + uuid + '\'' +
+                ", url='" + url + '\'' +
+                ", ord_in_thread=" + ord_in_thread +
+                ", author='" + author + '\'' +
+                ", published='" + published + '\'' +
+                ", title='" + title + '\'' +
+                ", text='" + text + '\'' +
+                ", highlightText='" + highlightText + '\'' +
+                ", highlightTitle='" + highlightTitle + '\'' +
+                ", language='" + language + '\'' +
+                ", external_links=" + Arrays.toString(external_links) +
+                ", entities=" + entities +
+                ", rating=" + rating +
+                ", crawled='" + crawled + '\'' +
+                '}';
     }
 }

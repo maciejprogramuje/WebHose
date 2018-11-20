@@ -1,4 +1,6 @@
-package pl.maciejprogramuje.webhose.pojos;
+package pl.maciejprogramuje.webhose.webhoseio.pojos;
+
+import java.util.Arrays;
 
 public class Results {
     private Post[] posts;
@@ -45,5 +47,16 @@ public class Results {
 
     public void setRequestsLeft(int requestsLeft) {
         this.requestsLeft = requestsLeft;
+    }
+
+    @Override
+    public String toString() {
+        return "Results{" +
+                "posts=" + Arrays.toString(posts) +
+                ", totalResults=" + totalResults +
+                ", moreResultsAvailable=" + moreResultsAvailable +
+                ", next='" + next + '\'' +
+                ", requestsLeft=" + requestsLeft +
+                '}';
     }
 }

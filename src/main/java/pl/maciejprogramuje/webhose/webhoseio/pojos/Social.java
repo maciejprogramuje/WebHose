@@ -1,4 +1,4 @@
-package pl.maciejprogramuje.webhose.pojos;
+package pl.maciejprogramuje.webhose.webhoseio.pojos;
 
 public class Social {
     private Facebook facebook;
@@ -54,5 +54,17 @@ public class Social {
 
     public void setVk(Vk vk) {
         this.vk = vk;
+    }
+
+    @Override
+    public String toString() {
+        return "Social{" +
+                "facebook=" + facebook +
+                ", gplus=" + gplus +
+                ", pinterest=" + pinterest +
+                ", linkedin=" + linkedin +
+                ", stumbledupon=" + stumbledupon +
+                ", vk=" + vk +
+                '}';
     }
 }

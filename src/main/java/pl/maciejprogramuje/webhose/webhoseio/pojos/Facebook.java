@@ -1,4 +1,4 @@
-package pl.maciejprogramuje.webhose.pojos;
+package pl.maciejprogramuje.webhose.webhoseio.pojos;
 
 public class Facebook {
     private int likes;
@@ -27,5 +27,14 @@ public class Facebook {
 
     public void setShares(int shares) {
         this.shares = shares;
+    }
+
+    @Override
+    public String toString() {
+        return "Facebook{" +
+                "likes=" + likes +
+                ", comments=" + comments +
+                ", shares=" + shares +
+                '}';
     }
 }
