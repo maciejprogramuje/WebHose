@@ -1,6 +1,6 @@
 package pl.maciejprogramuje.webhose.pojos;
 
-public class Posts {
+public class Post {
     private Thread[] threads;
     private String uuid;
     private String url;

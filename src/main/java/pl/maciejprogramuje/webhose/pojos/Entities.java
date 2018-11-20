@@ -1,31 +1,31 @@
 package pl.maciejprogramuje.webhose.pojos;
 
 public class Entities {
-    private String[] persons;
-    private String[] organizations;
-    private String[] locations;
+    private Person[] persons;
+    private Organization[] organizations;
+    private Location[] locations;
 
-    public String[] getPersons() {
+    public Person[] getPersons() {
         return persons;
     }
 
-    public void setPersons(String[] persons) {
+    public void setPersons(Person[] persons) {
         this.persons = persons;
     }
 
-    public String[] getOrganizations() {
+    public Organization[] getOrganizations() {
         return organizations;
     }
 
-    public void setOrganizations(String[] organizations) {
+    public void setOrganizations(Organization[] organizations) {
         this.organizations = organizations;
     }
 
-    public String[] getLocations() {
+    public Location[] getLocations() {
         return locations;
     }
 
-    public void setLocations(String[] locations) {
+    public void setLocations(Location[] locations) {
         this.locations = locations;
     }
 }
