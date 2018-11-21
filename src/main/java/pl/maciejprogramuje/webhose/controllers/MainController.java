@@ -2,10 +2,7 @@ package pl.maciejprogramuje.webhose.controllers;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressIndicator;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import pl.maciejprogramuje.webhose.managers.WebHoseManager;
 
 public class MainController {
@@ -13,13 +10,17 @@ public class MainController {
     public Button queryButton;
     public TextField apiKeyTextField;
     public Label resultsNumberLabel;
-    public Label shortResultLabel;
     public Label longResultLabel;
     public ProgressIndicator queryIndicator;
+    public ListView<String> shortResultListView;
+
+    private int currentResultNumber;
 
     @FXML
     public void initialize() {
         enableControlls();
+
+        shortResultListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
         WebHoseManager webHoseManager = new WebHoseManager();
 
@@ -35,14 +36,17 @@ public class MainController {
                 webHoseManager.tempAll();
 
                 Platform.runLater(() -> {
-                    shortResultLabel.setText(webHoseManager.getShortResult());
-                    longResultLabel.setText(webHoseManager.getLongResult());
+                    shortResultListView.setItems(webHoseManager.getShortResultsList());
+
+                    shortResultListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+                        currentResultNumber = (int) newValue;
+                        longResultLabel.setText(webHoseManager.getFullResultsList().get(currentResultNumber).toString());
+                    });
+
                     resultsNumberLabel.setText("The total number of posts matching your query: " + String.valueOf(webHoseManager.getResultsNumber()));
 
                     enableControlls();
                 });
-
-                System.out.println(webHoseManager.getLongResult());
             }).start();
         });
     }
