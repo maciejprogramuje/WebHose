@@ -36,6 +36,8 @@ public class WebHoseManager {
         try {
             JsonElement queryResult = webhoseClient.query("filterWebContent", queries);
 
+            System.out.println(queryResult.getAsJsonObject());
+
             resultsNumber = Integer.valueOf(queryResult.getAsJsonObject().get("totalResults").toString());
 
             GsonBuilder gsonBuilder = new GsonBuilder();
