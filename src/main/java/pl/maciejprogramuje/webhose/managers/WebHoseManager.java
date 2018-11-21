@@ -36,13 +36,15 @@ public class WebHoseManager {
         try {
             JsonElement queryResult = webhoseClient.query("filterWebContent", queries);
 
+            //TODO - tu jest problem, zapewne z parsowaniem przez Results.class
             System.out.println(queryResult.getAsJsonObject());
 
             resultsNumber = Integer.valueOf(queryResult.getAsJsonObject().get("totalResults").toString());
 
             GsonBuilder gsonBuilder = new GsonBuilder();
             Gson gson = gsonBuilder.create();
-            Results results = gson.fromJson(queryResult.toString(), Results.class);
+            //Results results = gson.fromJson(queryResult.toString(), Results.class);
+            Results results = gson.fromJson(queryResult.getAsJsonObject(), Results.class);
 
             if (results != null) {
                 for (int i = 0; i < results.getPosts().length; i++) {

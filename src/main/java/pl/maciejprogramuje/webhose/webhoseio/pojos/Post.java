@@ -3,7 +3,7 @@ package pl.maciejprogramuje.webhose.webhoseio.pojos;
 import java.util.Arrays;
 
 public class Post {
-    private Thread[] threads;
+    private Thread thread;
     private String uuid;
     private String url;
     private int ord_in_thread;
@@ -19,12 +19,12 @@ public class Post {
     private int rating;
     private String crawled;
 
-    public Thread[] getThreads() {
-        return threads;
+    public Thread getThread() {
+        return thread;
     }
 
-    public void setThreads(Thread[] threads) {
-        this.threads = threads;
+    public void setThread(Thread thread) {
+        this.thread = thread;
     }
 
     public String getUuid() {
@@ -142,7 +142,7 @@ public class Post {
     @Override
     public String toString() {
         return "Post{" +
-                "threads=" + Arrays.toString(threads) +
+                "thread=" + thread +
                 ", uuid='" + uuid + '\'' +
                 ", url='" + url + '\'' +
                 ", ord_in_thread=" + ord_in_thread +
