@@ -19,6 +19,7 @@ import static pl.maciejprogramuje.webhose.Main.API_KEY;
 public class WebHoseManager {
     private int resultsNumber;
     private String apiKey;
+    private String query;
     private ObservableList<String> shortResultsList;
     private ObservableList<Post> fullResultsList;
 
@@ -29,7 +30,7 @@ public class WebHoseManager {
         WebhoseIOClient webhoseClient = WebhoseIOClient.getInstance(apiKey);
 
         Map<String, String> queries = new HashMap<String, String>();
-        queries.put("q", "stock market language:english");
+        queries.put("q", query);
         queries.put("sort", "crawled");
 
         try {
@@ -78,5 +79,13 @@ public class WebHoseManager {
 
     public ObservableList<Post> getFullResultsList() {
         return fullResultsList;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    public String getQuery() {
+        return query;
     }
 }

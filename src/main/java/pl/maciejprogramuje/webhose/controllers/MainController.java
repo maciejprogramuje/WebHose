@@ -37,6 +37,7 @@ public class MainController {
 
             WebHoseManager webHoseManager = new WebHoseManager();
             webHoseManager.setApiKey(apiKeyTextField.getText());
+            webHoseManager.setQuery(queryTextField.getText());
 
             //TODO - tymczasowe
             apiKeyTextField.setText(webHoseManager.getApiKey());
