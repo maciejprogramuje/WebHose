@@ -1,9 +1,11 @@
 package pl.maciejprogramuje.webhose.controllers;
 
 import javafx.application.Platform;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import pl.maciejprogramuje.webhose.managers.WebHoseManager;
+import pl.maciejprogramuje.webhose.webhoseio.pojos.Post;
 
 public class MainController {
     public TextField queryTextField;
@@ -22,25 +24,29 @@ public class MainController {
 
         shortResultListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
-        WebHoseManager webHoseManager = new WebHoseManager();
-
         queryButton.setOnAction(event -> {
             disableControlls();
 
+            WebHoseManager webHoseManager = new WebHoseManager();
             webHoseManager.setApiKey(apiKeyTextField.getText());
 
             //TODO - tymczasowe
             apiKeyTextField.setText(webHoseManager.getApiKey());
 
             new Thread(() -> {
-                webHoseManager.tempAll();
+                webHoseManager.makeQuery();
 
                 Platform.runLater(() -> {
                     shortResultListView.setItems(webHoseManager.getShortResultsList());
 
+                    ObservableList<Post> fullResultsList = webHoseManager.getFullResultsList();
+                    if(fullResultsList.size() > 0) {
+                        longResultLabel.setText(fullResultsList.get(0).toString());
+                    }
+
                     shortResultListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
                         currentResultNumber = (int) newValue;
-                        longResultLabel.setText(webHoseManager.getFullResultsList().get(currentResultNumber).toString());
+                        longResultLabel.setText(fullResultsList.get(currentResultNumber).toString());
                     });
 
                     resultsNumberLabel.setText("The total number of posts matching your query: " + String.valueOf(webHoseManager.getResultsNumber()));

@@ -22,7 +22,7 @@ public class WebHoseManager {
     private ObservableList<String> shortResultsList;
     private ObservableList<Post> fullResultsList;
 
-    public void tempAll() {
+    public void makeQuery() {
         shortResultsList = FXCollections.observableArrayList();
         fullResultsList = FXCollections.observableArrayList();
 
