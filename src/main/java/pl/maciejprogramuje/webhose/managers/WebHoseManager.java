@@ -36,14 +36,10 @@ public class WebHoseManager {
         try {
             JsonElement queryResult = webhoseClient.query("filterWebContent", queries);
 
-            //TODO - tu jest problem, zapewne z parsowaniem przez Results.class
-            System.out.println(queryResult.getAsJsonObject());
-
             resultsNumber = Integer.valueOf(queryResult.getAsJsonObject().get("totalResults").toString());
 
             GsonBuilder gsonBuilder = new GsonBuilder();
             Gson gson = gsonBuilder.create();
-            //Results results = gson.fromJson(queryResult.toString(), Results.class);
             Results results = gson.fromJson(queryResult.getAsJsonObject(), Results.class);
 
             if (results != null) {
@@ -51,6 +47,8 @@ public class WebHoseManager {
                     String tempShortResult = (i + 1) + ". queryResult: " + results.getPosts()[i].getTitle() + "\n";
                     shortResultsList.add(tempShortResult);
                     fullResultsList.add(results.getPosts()[i]);
+
+                    //TODO - dodać przyucisk kopiowania do schowka treści labelki
                 }
             } else {
                 System.out.println("results NULL");
