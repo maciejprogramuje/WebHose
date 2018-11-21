@@ -14,7 +14,9 @@ import java.util.Map;
 import static pl.maciejprogramuje.webhose.Main.API_KEY;
 
 public class WebHoseManager {
-    private String r;
+    private String shortResult;
+    private String longResult;
+    private int resultsNumber;
     private String apiKey;
 
     public void tempAll() {
@@ -27,14 +29,14 @@ public class WebHoseManager {
         try {
             JsonElement queryResult = webhoseClient.query("filterWebContent", queries);
 
-            System.out.println(queryResult.getAsJsonObject().get("totalResults"));
+            resultsNumber = Integer.valueOf(queryResult.getAsJsonObject().get("totalResults").toString());
 
             GsonBuilder gsonBuilder = new GsonBuilder();
             Gson gson = gsonBuilder.create();
             Results results = gson.fromJson(queryResult.toString(), Results.class);
 
             if (results != null) {
-                System.out.println(results);
+                longResult = results.toString();
 
                 StringBuilder stringBuilder = new StringBuilder();
 
@@ -42,18 +44,13 @@ public class WebHoseManager {
                     stringBuilder.append(i + 1).append(". queryResult: ").append(results.getPosts()[i].getTitle()).append("\n");
                 }
 
-                r = stringBuilder.toString();
-                System.out.println(r);
+                shortResult = stringBuilder.toString();
             } else {
                 System.out.println("results NULL");
             }
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public String getShortResult() {
-        return  r;
     }
 
     public void setApiKey(String apiKey) {
@@ -67,5 +64,17 @@ public class WebHoseManager {
 
     public String getApiKey() {
         return apiKey;
+    }
+
+    public String getLongResult() {
+        return longResult;
+    }
+
+    public String getShortResult() {
+        return shortResult;
+    }
+
+    public int getResultsNumber() {
+        return resultsNumber;
     }
 }

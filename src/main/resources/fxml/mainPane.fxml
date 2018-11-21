@@ -6,7 +6,7 @@
    <children>
       <TextField fx:id="apiKeyTextField" promptText="enter API key" />
       <TextField fx:id="queryTextField" promptText="enter query" text="stock market language:english" />
-      <Label fx:id="queryLabel" text="Label" />
+      <Label fx:id="resultsNumberLabel" />
       <Button fx:id="queryButton" mnemonicParsing="false" text="Query!" />
       <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" pannable="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <content>
