@@ -17,7 +17,7 @@ public class Thread {
     private int participants_count;
     private String site_type;
     private String country;
-    private double spam_score;
+    private Number spam_score;
     private String main_image;
     private int performance_score;
     private int domain_rank;
@@ -135,11 +135,11 @@ public class Thread {
         this.country = country;
     }
 
-    public double getSpam_score() {
+    public Number getSpam_score() {
         return spam_score;
     }
 
-    public void setSpam_score(double spam_score) {
+    public void setSpam_score(Number spam_score) {
         this.spam_score = spam_score;
     }
 
