@@ -1,5 +1,6 @@
 package pl.maciejprogramuje.webhose.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,9 +24,11 @@ public class MainController {
             //TODO - tymczasowe
             apiKeyTextField.setText(webHoseManager.getApiKey());
 
-            webHoseManager.tempAll();
+            new Thread(() -> {
+                webHoseManager.tempAll();
 
-            resultLabel.setText(webHoseManager.getShortResult());
+                Platform.runLater(() -> resultLabel.setText(webHoseManager.getShortResult()));
+            }).start();
         });
     }
 }
