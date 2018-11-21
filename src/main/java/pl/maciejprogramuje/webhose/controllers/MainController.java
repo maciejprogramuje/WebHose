@@ -16,13 +16,22 @@ public class MainController {
     public ProgressIndicator queryIndicator;
     public ListView<String> shortResultListView;
 
-    private int currentResultNumber;
+    private ObservableList<Post> fullResultsList;
 
     @FXML
     public void initialize() {
         enableControlls();
 
         shortResultListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+        shortResultListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
+            int position = (int) newValue;
+            if (position == -1) {
+                position = 0;
+            }
+
+            longResultLabel.setText(fullResultsList.get(position).toString());
+        });
 
         queryButton.setOnAction(event -> {
             disableControlls();
@@ -37,17 +46,12 @@ public class MainController {
                 webHoseManager.makeQuery();
 
                 Platform.runLater(() -> {
+                    shortResultListView.getItems().clear();
+                    shortResultListView.getSelectionModel().clearSelection();
+
                     shortResultListView.setItems(webHoseManager.getShortResultsList());
 
-                    ObservableList<Post> fullResultsList = webHoseManager.getFullResultsList();
-                    if(fullResultsList.size() > 0) {
-                        longResultLabel.setText(fullResultsList.get(0).toString());
-                    }
-
-                    shortResultListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-                        currentResultNumber = (int) newValue;
-                        longResultLabel.setText(fullResultsList.get(currentResultNumber).toString());
-                    });
+                    fullResultsList = webHoseManager.getFullResultsList();
 
                     resultsNumberLabel.setText("The total number of posts matching your query: " + String.valueOf(webHoseManager.getResultsNumber()));
 
@@ -65,6 +69,7 @@ public class MainController {
     private void enableControlls() {
         queryButton.setDisable(false);
         queryIndicator.setVisible(false);
+        longResultLabel.setText("");
     }
 }
 
