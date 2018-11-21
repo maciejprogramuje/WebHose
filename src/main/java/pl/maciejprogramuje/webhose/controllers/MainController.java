@@ -56,6 +56,7 @@ public class MainController {
                     resultsNumberLabel.setText("The total number of posts matching your query: " + String.valueOf(webHoseManager.getResultsNumber()));
 
                     if(fullResultsList.size() > 0) {
+                        shortResultListView.scrollTo(0);
                         shortResultListView.getSelectionModel().select(0);
                     }
 
