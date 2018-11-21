@@ -10,9 +10,10 @@ import pl.maciejprogramuje.webhose.managers.WebHoseManager;
 public class MainController {
     public TextField queryTextField;
     public Button queryButton;
-    public Label resultLabel;
     public TextField apiKeyTextField;
     public Label resultsNumberLabel;
+    public Label shortResultLabel;
+    public Label longResultLabel;
 
     @FXML
     public void initialize() {
@@ -28,8 +29,9 @@ public class MainController {
                 webHoseManager.tempAll();
 
                 Platform.runLater(() -> {
-                    resultLabel.setText(webHoseManager.getShortResult());
-                    resultsNumberLabel.setText("The total number of posts matching your query " + String.valueOf(webHoseManager.getResultsNumber()));
+                    shortResultLabel.setText(webHoseManager.getShortResult());
+                    longResultLabel.setText(webHoseManager.getLongResult());
+                    resultsNumberLabel.setText("The total number of posts matching your query: " + String.valueOf(webHoseManager.getResultsNumber()));
                 });
 
                 System.out.println(webHoseManager.getLongResult());
