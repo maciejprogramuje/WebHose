@@ -55,6 +55,10 @@ public class MainController {
 
                     resultsNumberLabel.setText("The total number of posts matching your query: " + String.valueOf(webHoseManager.getResultsNumber()));
 
+                    if(fullResultsList.size() > 0) {
+                        shortResultListView.getSelectionModel().select(0);
+                    }
+
                     enableControlls();
                 });
             }).start();
@@ -69,7 +73,6 @@ public class MainController {
     private void enableControlls() {
         queryButton.setDisable(false);
         queryIndicator.setVisible(false);
-        longResultLabel.setText("");
     }
 }
 
