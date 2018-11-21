@@ -23,7 +23,6 @@ public class MainController {
         enableControlls();
 
         shortResultListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-
         shortResultListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
             int position = (int) newValue;
             if (position == -1) {
@@ -48,17 +47,15 @@ public class MainController {
                 Platform.runLater(() -> {
                     shortResultListView.getItems().clear();
                     shortResultListView.getSelectionModel().clearSelection();
-
                     shortResultListView.setItems(webHoseManager.getShortResultsList());
 
                     fullResultsList = webHoseManager.getFullResultsList();
-
-                    resultsNumberLabel.setText("The total number of posts matching your query: " + String.valueOf(webHoseManager.getResultsNumber()));
-
                     if(fullResultsList.size() > 0) {
                         shortResultListView.scrollTo(0);
                         shortResultListView.getSelectionModel().select(0);
                     }
+
+                    resultsNumberLabel.setText("The total number of posts matching your query: " + String.valueOf(webHoseManager.getResultsNumber()));
 
                     enableControlls();
                 });
