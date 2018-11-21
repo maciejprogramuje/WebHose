@@ -18,6 +18,10 @@ public class MainController {
         WebHoseManager webHoseManager = new WebHoseManager();
 
         queryButton.setOnAction(event -> {
+            webHoseManager.setApiKey(apiKeyTextField.getText());
+
+            //TODO - tymczasowe
+            apiKeyTextField.setText(webHoseManager.getApiKey());
 
             webHoseManager.tempAll();
 

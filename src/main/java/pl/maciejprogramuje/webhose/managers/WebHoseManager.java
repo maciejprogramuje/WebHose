@@ -11,11 +11,14 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static pl.maciejprogramuje.webhose.Main.API_KEY;
+
 public class WebHoseManager {
     private String r;
+    private String apiKey;
 
     public void tempAll() {
-        WebhoseIOClient webhoseClient = WebhoseIOClient.getInstance("5e4f2b3f-7b67-4646-b8ca-a661bc1be8c0");
+        WebhoseIOClient webhoseClient = WebhoseIOClient.getInstance(apiKey);
 
         Map<String, String> queries = new HashMap<String, String>();
         queries.put("q", "stock market language:english");
@@ -51,5 +54,18 @@ public class WebHoseManager {
 
     public String getShortResult() {
         return  r;
+    }
+
+    public void setApiKey(String apiKey) {
+        //TODO - tymczasowy apiKey
+        if(apiKey== null || apiKey.isEmpty()) {
+            this.apiKey = API_KEY;
+        } else {
+            this.apiKey = apiKey;
+        }
+    }
+
+    public String getApiKey() {
+        return apiKey;
     }
 }
