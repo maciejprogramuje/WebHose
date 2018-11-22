@@ -47,8 +47,6 @@ public class WebHoseManager {
                     String tempShortResult = (i + 1) + ". queryResult: " + results.getPosts()[i].getTitle() + "\n";
                     shortResultsList.add(tempShortResult);
                     fullResultsList.add(results.getPosts()[i]);
-
-                    //TODO - dodać przyucisk kopiowania do schowka treści labelki
                 }
             } else {
                 System.out.println("results NULL");

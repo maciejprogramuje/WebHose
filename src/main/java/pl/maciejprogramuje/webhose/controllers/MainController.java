@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import pl.maciejprogramuje.webhose.managers.CopyToClipboard;
 import pl.maciejprogramuje.webhose.managers.WebHoseManager;
 import pl.maciejprogramuje.webhose.webhoseio.pojos.Post;
 
@@ -15,6 +16,7 @@ public class MainController {
     public Label longResultLabel;
     public ProgressIndicator queryIndicator;
     public ListView<String> shortResultListView;
+    public Button copyToClipboardButton;
 
     private ObservableList<Post> fullResultsList;
 
@@ -61,6 +63,10 @@ public class MainController {
                     enableControlls();
                 });
             }).start();
+        });
+
+        copyToClipboardButton.setOnAction(event -> {
+            CopyToClipboard.copy(longResultLabel.getText());
         });
     }
 
