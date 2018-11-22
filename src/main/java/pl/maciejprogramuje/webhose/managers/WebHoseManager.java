@@ -22,12 +22,13 @@ public class WebHoseManager {
     private String query;
     private ObservableList<String> shortResultsList;
     private ObservableList<Post> fullResultsList;
+    private WebhoseIOClient webhoseClient;
 
     public void makeQuery() {
         shortResultsList = FXCollections.observableArrayList();
         fullResultsList = FXCollections.observableArrayList();
 
-        WebhoseIOClient webhoseClient = WebhoseIOClient.getInstance(apiKey);
+        webhoseClient = WebhoseIOClient.getInstance(apiKey);
 
         Map<String, String> queries = new HashMap<String, String>();
         queries.put("q", query);
@@ -87,5 +88,9 @@ public class WebHoseManager {
 
     public String getQuery() {
         return query;
+    }
+
+    public WebhoseIOClient getWebhoseClient() {
+        return webhoseClient;
     }
 }

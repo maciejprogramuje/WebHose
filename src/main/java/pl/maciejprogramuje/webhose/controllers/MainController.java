@@ -20,6 +20,7 @@ public class MainController {
     public Button nextButton;
 
     private ObservableList<Post> fullResultsList;
+    private WebHoseManager webHoseManager;
 
     @FXML
     public void initialize() {
@@ -38,7 +39,7 @@ public class MainController {
         queryButton.setOnAction(event -> {
             disableControlls();
 
-            WebHoseManager webHoseManager = new WebHoseManager();
+            webHoseManager = new WebHoseManager();
             webHoseManager.setApiKey(apiKeyTextField.getText());
             webHoseManager.setQuery(queryTextField.getText());
 
@@ -67,7 +68,7 @@ public class MainController {
         });
 
         nextButton.setOnAction(event -> {
-
+            //TODO - pobierz następną stronę wyników i wyświetl
         });
 
         copyToClipboardButton.setOnAction(event -> {
