@@ -13,10 +13,9 @@ public class Stumbledupon {
 
     @Override
     public String toString() {
-        return new StringBuffer()
-                .append("Stumbledupon{").append("\n")
-                .append("   shares=").append(shares).append("\n")
-                .append('}').append("\n")
-                .toString();
+        final StringBuffer sb = new StringBuffer("Stumbledupon{");
+        sb.append("shares=").append(shares);
+        sb.append('}');
+        return sb.toString();
     }
 }

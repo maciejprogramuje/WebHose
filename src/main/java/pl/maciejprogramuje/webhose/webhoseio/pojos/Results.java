@@ -51,14 +51,13 @@ public class Results {
 
     @Override
     public String toString() {
-        return new StringBuffer()
-                .append("Pinterest{").append("\n")
-                .append("   posts=").append(posts == null ? "null" : Arrays.asList(posts).toString()).append(",").append("\n")
-                .append("   totalResults=").append(totalResults).append(",").append("\n")
-                .append("   moreResultsAvailable=").append(moreResultsAvailable).append(",").append("\n")
-                .append("   next='").append(next).append('\'').append(",").append("\n")
-                .append("   requestsLeft=").append(requestsLeft).append("\n")
-                .append('}').append("\n")
-                .toString();
+        final StringBuffer sb = new StringBuffer("Results{");
+        sb.append("posts=").append(posts == null ? "null" : Arrays.asList(posts).toString());
+        sb.append(", totalResults=").append(totalResults);
+        sb.append(", moreResultsAvailable=").append(moreResultsAvailable);
+        sb.append(", next='").append(next).append('\'');
+        sb.append(", requestsLeft=").append(requestsLeft);
+        sb.append('}');
+        return sb.toString();
     }
 }

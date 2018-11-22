@@ -13,10 +13,9 @@ public class Pinterest {
 
     @Override
     public String toString() {
-        return new StringBuffer()
-                .append("Pinterest{").append("\n")
-                .append("   shares=").append(shares).append("\n")
-                .append('}').append("\n")
-                .toString();
+        final StringBuffer sb = new StringBuffer("Pinterest{");
+        sb.append("shares=").append(shares);
+        sb.append('}');
+        return sb.toString();
     }
 }

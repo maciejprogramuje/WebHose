@@ -31,12 +31,11 @@ public class Facebook {
 
     @Override
     public String toString() {
-        return new StringBuffer()
-                .append("Facebook{").append("\n")
-                .append("   likes=").append(likes).append(",").append("\n")
-                .append("   comments=").append(comments).append(",").append("\n")
-                .append("   shares=").append(shares).append("\n")
-                .append('}').append("\n")
-                .toString();
+        final StringBuffer sb = new StringBuffer("Facebook{");
+        sb.append("likes=").append(likes);
+        sb.append(", comments=").append(comments);
+        sb.append(", shares=").append(shares);
+        sb.append('}');
+        return sb.toString();
     }
 }

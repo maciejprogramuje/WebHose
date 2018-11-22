@@ -177,31 +177,28 @@ public class Thread {
 
     @Override
     public String toString() {
-        String tab = "\t\t";
-
-        return new StringBuffer()
-                .append("thread: {").append("\n")
-                .append(tab).append("uuid:'").append(uuid).append('\'').append(",").append("\n")
-                .append(tab).append("url:'").append(url).append('\'').append(",").append("\n")
-                .append(tab).append("site_full:'").append(site_full).append('\'').append(",").append("\n")
-                .append(tab).append("site:'").append(site).append('\'').append(",").append("\n")
-                .append(tab).append("site_section:'").append(site_section).append('\'').append(",").append("\n")
-                .append(tab).append("site_categories: ").append(site_categories == null ? "null" : Arrays.asList(site_categories).toString()).append(",").append("\n")
-                .append(tab).append("section_title:'").append(section_title).append('\'').append(",").append("\n")
-                .append(tab).append("title:'").append(title).append('\'').append(",").append("\n")
-                .append(tab).append("title_full:'").append(title_full).append('\'').append(",").append("\n")
-                .append(tab).append("published:'").append(published).append('\'').append(",").append("\n")
-                .append(tab).append("replies_count:").append(replies_count).append(",").append("\n")
-                .append(tab).append("participants_count:").append(participants_count).append(",").append("\n")
-                .append(tab).append("site_type:'").append(site_type).append('\'').append(",").append("\n")
-                .append(tab).append("country:'").append(country).append('\'').append(",").append("\n")
-                .append(tab).append("spam_score:").append(spam_score).append(",").append("\n")
-                .append(tab).append("main_image:'").append(main_image).append('\'').append(",").append("\n")
-                .append(tab).append("performance_score:").append(performance_score).append(",").append("\n")
-                .append(tab).append("domain_rank:").append(domain_rank).append(",").append("\n")
-                .append(tab).append(social).append("\n")
-                .append("}thread").append("\n")
-                .toString();
+        final StringBuffer sb = new StringBuffer("Thread{");
+        sb.append("uuid='").append(uuid).append('\'');
+        sb.append(", url='").append(url).append('\'');
+        sb.append(", site_full='").append(site_full).append('\'');
+        sb.append(", site='").append(site).append('\'');
+        sb.append(", site_section='").append(site_section).append('\'');
+        sb.append(", site_categories=").append(site_categories == null ? "null" : Arrays.asList(site_categories).toString());
+        sb.append(", section_title='").append(section_title).append('\'');
+        sb.append(", title='").append(title).append('\'');
+        sb.append(", title_full='").append(title_full).append('\'');
+        sb.append(", published='").append(published).append('\'');
+        sb.append(", replies_count=").append(replies_count);
+        sb.append(", participants_count=").append(participants_count);
+        sb.append(", site_type='").append(site_type).append('\'');
+        sb.append(", country='").append(country).append('\'');
+        sb.append(", spam_score=").append(spam_score);
+        sb.append(", main_image='").append(main_image).append('\'');
+        sb.append(", performance_score=").append(performance_score);
+        sb.append(", domain_rank=").append(domain_rank);
+        sb.append(", social=").append(social);
+        sb.append('}');
+        return sb.toString();
     }
 }
 

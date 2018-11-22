@@ -13,10 +13,9 @@ public class Vk {
 
     @Override
     public String toString() {
-        return new StringBuffer()
-                .append("Vk{").append("\n")
-                .append("shares=").append(shares).append("\n")
-                .append('}').append("\n")
-                .toString();
+        final StringBuffer sb = new StringBuffer("Vk{");
+        sb.append("shares=").append(shares);
+        sb.append('}');
+        return sb.toString();
     }
 }

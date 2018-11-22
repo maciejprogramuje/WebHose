@@ -13,10 +13,9 @@ public class Gplus {
 
     @Override
     public String toString() {
-        return new StringBuffer()
-                .append("Gplus{").append("\n")
-                .append("   shares=").append(shares).append("\n")
-                .append('}').append("\n")
-                .toString();
+        final StringBuffer sb = new StringBuffer("Gplus{");
+        sb.append("shares=").append(shares);
+        sb.append('}');
+        return sb.toString();
     }
 }
