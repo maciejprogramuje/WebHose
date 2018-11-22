@@ -17,6 +17,7 @@ public class MainController {
     public ProgressIndicator queryIndicator;
     public ListView<String> shortResultListView;
     public Button copyToClipboardButton;
+    public Button nextButton;
 
     private ObservableList<Post> fullResultsList;
 
@@ -63,6 +64,10 @@ public class MainController {
                     enableControlls();
                 });
             }).start();
+        });
+
+        nextButton.setOnAction(event -> {
+
         });
 
         copyToClipboardButton.setOnAction(event -> {
