@@ -141,22 +141,22 @@ public class Post {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Post{");
-        sb.append("thread=").append(thread);
-        sb.append(", uuid='").append(uuid).append('\'');
-        sb.append(", url='").append(url).append('\'');
-        sb.append(", ord_in_thread=").append(ord_in_thread);
-        sb.append(", author='").append(author).append('\'');
-        sb.append(", published='").append(published).append('\'');
-        sb.append(", title='").append(title).append('\'');
-        sb.append(", text='").append(text).append('\'');
-        sb.append(", highlightText='").append(highlightText).append('\'');
-        sb.append(", highlightTitle='").append(highlightTitle).append('\'');
-        sb.append(", language='").append(language).append('\'');
-        sb.append(", external_links=").append(external_links == null ? "null" : Arrays.asList(external_links).toString());
-        sb.append(", entities=").append(entities);
-        sb.append(", rating=").append(rating);
-        sb.append(", crawled='").append(crawled).append('\'');
+        final StringBuffer sb = new StringBuffer("Post { ");
+        sb.append("thread = ").append(thread);
+        sb.append(", uuid = '").append(uuid).append('\'');
+        sb.append(", url = '").append(url).append('\'');
+        sb.append(", ord_in_thread = ").append(ord_in_thread);
+        sb.append(", author = '").append(author).append('\'');
+        sb.append(", published = '").append(published).append('\'');
+        sb.append(", title = '").append(title).append('\'');
+        sb.append(", text = '").append(text).append('\'');
+        sb.append(", highlightText = '").append(highlightText).append('\'');
+        sb.append(", highlightTitle = '").append(highlightTitle).append('\'');
+        sb.append(", language = '").append(language).append('\'');
+        sb.append(", external_links = ").append(external_links == null ? "null" : Arrays.asList(external_links).toString());
+        sb.append(", entities = ").append(entities);
+        sb.append(", rating = ").append(rating);
+        sb.append(", crawled = '").append(crawled).append('\'');
         sb.append('}');
         return sb.toString();
     }

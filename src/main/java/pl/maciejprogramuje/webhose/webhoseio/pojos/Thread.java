@@ -177,26 +177,26 @@ public class Thread {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Thread{");
-        sb.append("uuid='").append(uuid).append('\'');
-        sb.append(", url='").append(url).append('\'');
-        sb.append(", site_full='").append(site_full).append('\'');
-        sb.append(", site='").append(site).append('\'');
-        sb.append(", site_section='").append(site_section).append('\'');
-        sb.append(", site_categories=").append(site_categories == null ? "null" : Arrays.asList(site_categories).toString());
-        sb.append(", section_title='").append(section_title).append('\'');
-        sb.append(", title='").append(title).append('\'');
-        sb.append(", title_full='").append(title_full).append('\'');
-        sb.append(", published='").append(published).append('\'');
-        sb.append(", replies_count=").append(replies_count);
-        sb.append(", participants_count=").append(participants_count);
-        sb.append(", site_type='").append(site_type).append('\'');
-        sb.append(", country='").append(country).append('\'');
-        sb.append(", spam_score=").append(spam_score);
-        sb.append(", main_image='").append(main_image).append('\'');
-        sb.append(", performance_score=").append(performance_score);
-        sb.append(", domain_rank=").append(domain_rank);
-        sb.append(", social=").append(social);
+        final StringBuffer sb = new StringBuffer("Thread { ");
+        sb.append("uuid = '").append(uuid).append('\'');
+        sb.append(", url = '").append(url).append('\'');
+        sb.append(", site_full = '").append(site_full).append('\'');
+        sb.append(", site = '").append(site).append('\'');
+        sb.append(", site_section = '").append(site_section).append('\'');
+        sb.append(", site_categories = ").append(site_categories == null ? "null" : Arrays.asList(site_categories).toString());
+        sb.append(", section_title = '").append(section_title).append('\'');
+        sb.append(", title = '").append(title).append('\'');
+        sb.append(", title_full = '").append(title_full).append('\'');
+        sb.append(", published = '").append(published).append('\'');
+        sb.append(", replies_count = ").append(replies_count);
+        sb.append(", participants_count = ").append(participants_count);
+        sb.append(", site_type = '").append(site_type).append('\'');
+        sb.append(", country = '").append(country).append('\'');
+        sb.append(", spam_score = ").append(spam_score);
+        sb.append(", main_image = '").append(main_image).append('\'');
+        sb.append(", performance_score = ").append(performance_score);
+        sb.append(", domain_rank = ").append(domain_rank);
+        sb.append(", social = ").append(social);
         sb.append('}');
         return sb.toString();
     }

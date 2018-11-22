@@ -22,9 +22,9 @@ public class Person {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Person{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", sentiment='").append(sentiment).append('\'');
+        final StringBuffer sb = new StringBuffer("Person { ");
+        sb.append("name = '").append(name).append('\'');
+        sb.append(", sentiment = '").append(sentiment).append('\'');
         sb.append('}');
         return sb.toString();
     }

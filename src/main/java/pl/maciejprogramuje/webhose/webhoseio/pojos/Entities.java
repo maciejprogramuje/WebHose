@@ -33,10 +33,10 @@ public class Entities {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Entities{");
-        sb.append("persons=").append(persons == null ? "null" : Arrays.asList(persons).toString());
-        sb.append(", organizations=").append(organizations == null ? "null" : Arrays.asList(organizations).toString());
-        sb.append(", locations=").append(locations == null ? "null" : Arrays.asList(locations).toString());
+        final StringBuffer sb = new StringBuffer("Entities { ");
+        sb.append("persons = ").append(persons == null ? "null" : Arrays.asList(persons).toString());
+        sb.append(", organizations = ").append(organizations == null ? "null" : Arrays.asList(organizations).toString());
+        sb.append(", locations = ").append(locations == null ? "null" : Arrays.asList(locations).toString());
         sb.append('}');
         return sb.toString();
     }

@@ -31,10 +31,10 @@ public class Facebook {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Facebook{");
-        sb.append("likes=").append(likes);
-        sb.append(", comments=").append(comments);
-        sb.append(", shares=").append(shares);
+        final StringBuffer sb = new StringBuffer("Facebook { ");
+        sb.append("likes = ").append(likes);
+        sb.append(", comments = ").append(comments);
+        sb.append(", shares = ").append(shares);
         sb.append('}');
         return sb.toString();
     }

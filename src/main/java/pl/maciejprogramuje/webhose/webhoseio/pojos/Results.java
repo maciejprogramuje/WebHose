@@ -51,12 +51,12 @@ public class Results {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Results{");
-        sb.append("posts=").append(posts == null ? "null" : Arrays.asList(posts).toString());
-        sb.append(", totalResults=").append(totalResults);
-        sb.append(", moreResultsAvailable=").append(moreResultsAvailable);
-        sb.append(", next='").append(next).append('\'');
-        sb.append(", requestsLeft=").append(requestsLeft);
+        final StringBuffer sb = new StringBuffer("Results { ");
+        sb.append("posts = ").append(posts == null ? "null" : Arrays.asList(posts).toString());
+        sb.append(", totalResults = ").append(totalResults);
+        sb.append(", moreResultsAvailable = ").append(moreResultsAvailable);
+        sb.append(", next = '").append(next).append('\'');
+        sb.append(", requestsLeft = ").append(requestsLeft);
         sb.append('}');
         return sb.toString();
     }

@@ -58,13 +58,13 @@ public class Social {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Social{");
-        sb.append("facebook=").append(facebook);
-        sb.append(", gplus=").append(gplus);
-        sb.append(", pinterest=").append(pinterest);
-        sb.append(", linkedin=").append(linkedin);
-        sb.append(", stumbledupon=").append(stumbledupon);
-        sb.append(", vk=").append(vk);
+        final StringBuffer sb = new StringBuffer("Social { ");
+        sb.append("facebook = ").append(facebook);
+        sb.append(", gplus = ").append(gplus);
+        sb.append(", pinterest = ").append(pinterest);
+        sb.append(", linkedin = ").append(linkedin);
+        sb.append(", stumbledupon = ").append(stumbledupon);
+        sb.append(", vk = ").append(vk);
         sb.append('}');
         return sb.toString();
     }

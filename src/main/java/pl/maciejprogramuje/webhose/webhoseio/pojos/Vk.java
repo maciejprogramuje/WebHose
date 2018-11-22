@@ -13,8 +13,8 @@ public class Vk {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Vk{");
-        sb.append("shares=").append(shares);
+        final StringBuffer sb = new StringBuffer("Vk { ");
+        sb.append("shares = ").append(shares);
         sb.append('}');
         return sb.toString();
     }
