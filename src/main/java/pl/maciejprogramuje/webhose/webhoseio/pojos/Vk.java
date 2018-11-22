@@ -13,8 +13,10 @@ public class Vk {
 
     @Override
     public String toString() {
-        return "Vk{" +
-                "shares=" + shares +
-                '}';
+        return new StringBuffer()
+                .append("Vk{").append("\n")
+                .append("shares=").append(shares).append("\n")
+                .append('}').append("\n")
+                .toString();
     }
 }

@@ -13,8 +13,10 @@ public class Linkedin {
 
     @Override
     public String toString() {
-        return "Linkedin{" +
-                "shares=" + shares +
-                '}';
+        return new StringBuffer()
+                .append("Linkedin{").append("\n")
+                .append("   shares=").append(shares).append("\n")
+                .append('}').append("\n")
+                .toString();
     }
 }

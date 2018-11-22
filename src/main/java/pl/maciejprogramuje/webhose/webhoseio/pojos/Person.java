@@ -22,9 +22,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", sentiment='" + sentiment + '\'' +
-                '}';
+        return new StringBuffer()
+                .append("Person{").append("\n")
+                .append("   name='").append(name).append('\'').append(",").append("\n")
+                .append("   sentiment='").append(sentiment).append('\'').append("\n")
+                .append('}').append("\n")
+                .toString();
     }
 }

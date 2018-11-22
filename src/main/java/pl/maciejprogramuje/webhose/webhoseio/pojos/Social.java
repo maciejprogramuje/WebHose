@@ -58,13 +58,17 @@ public class Social {
 
     @Override
     public String toString() {
-        return "Social{" +
-                "facebook=" + facebook +
-                ", gplus=" + gplus +
-                ", pinterest=" + pinterest +
-                ", linkedin=" + linkedin +
-                ", stumbledupon=" + stumbledupon +
-                ", vk=" + vk +
-                '}';
+        String tab = "\t\t\t";
+
+        return new StringBuffer()
+                .append("social: {").append("\n")
+                .append(tab).append("facebook:").append(facebook).append(",").append("\n")
+                .append(tab).append("gplus:").append(gplus).append(",").append("\n")
+                .append(tab).append("pinterest:").append(pinterest).append(",").append("\n")
+                .append(tab).append("linkedin:").append(linkedin).append(",").append("\n")
+                .append(tab).append("stumbledupon:").append(stumbledupon).append(",").append("\n")
+                .append(tab).append("vk:").append(vk).append("\n")
+                .append("}social").append("\n")
+                .toString();
     }
 }

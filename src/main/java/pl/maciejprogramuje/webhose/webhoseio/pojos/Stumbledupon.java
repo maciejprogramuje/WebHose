@@ -13,8 +13,10 @@ public class Stumbledupon {
 
     @Override
     public String toString() {
-        return "Stumbledupon{" +
-                "shares=" + shares +
-                '}';
+        return new StringBuffer()
+                .append("Stumbledupon{").append("\n")
+                .append("   shares=").append(shares).append("\n")
+                .append('}').append("\n")
+                .toString();
     }
 }

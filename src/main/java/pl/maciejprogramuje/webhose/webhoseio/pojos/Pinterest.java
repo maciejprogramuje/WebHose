@@ -13,8 +13,10 @@ public class Pinterest {
 
     @Override
     public String toString() {
-        return "Pinterest{" +
-                "shares=" + shares +
-                '}';
+        return new StringBuffer()
+                .append("Pinterest{").append("\n")
+                .append("   shares=").append(shares).append("\n")
+                .append('}').append("\n")
+                .toString();
     }
 }

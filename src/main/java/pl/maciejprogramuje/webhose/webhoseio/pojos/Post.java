@@ -141,22 +141,26 @@ public class Post {
 
     @Override
     public String toString() {
-        return "Post{" +
-                "thread=" + thread +
-                ", uuid='" + uuid + '\'' +
-                ", url='" + url + '\'' +
-                ", ord_in_thread=" + ord_in_thread +
-                ", author='" + author + '\'' +
-                ", published='" + published + '\'' +
-                ", title='" + title + '\'' +
-                ", text='" + text + '\'' +
-                ", highlightText='" + highlightText + '\'' +
-                ", highlightTitle='" + highlightTitle + '\'' +
-                ", language='" + language + '\'' +
-                ", external_links=" + Arrays.toString(external_links) +
-                ", entities=" + entities +
-                ", rating=" + rating +
-                ", crawled='" + crawled + '\'' +
-                '}';
+        String tab = "\t";
+
+        return new StringBuffer()
+                .append("{").append("\n")
+                .append(tab).append(thread).append(",").append("\n")
+                .append(tab).append("uuid:'").append(uuid).append('\'').append(",").append("\n")
+                .append(tab).append("url:'").append(url).append('\'').append(",").append("\n")
+                .append(tab).append("ord_in_thread:").append(ord_in_thread).append(",").append("\n")
+                .append(tab).append("author:'").append(author).append('\'').append(",").append("\n")
+                .append(tab).append("published:'").append(published).append('\'').append(",").append("\n")
+                .append(tab).append("title:'").append(title).append('\'').append(",").append("\n")
+                .append(tab).append("text:'").append(text).append('\'').append(",").append("\n")
+                .append(tab).append("highlightText:'").append(highlightText).append('\'').append(",").append("\n")
+                .append(tab).append("highlightTitle:'").append(highlightTitle).append('\'').append(",").append("\n")
+                .append(tab).append("language:'").append(language).append('\'').append(",").append("\n")
+                .append(tab).append("external_links:").append(external_links == null ? "null" : Arrays.asList(external_links).toString()).append(",").append("\n")
+                .append(tab).append("entities:").append(entities).append(",").append("\n")
+                .append(tab).append("rating:").append(rating).append(",").append("\n")
+                .append(tab).append("crawled:'").append(crawled).append('\'').append("\n")
+                .append("}post").append("\n")
+                .toString();
     }
 }

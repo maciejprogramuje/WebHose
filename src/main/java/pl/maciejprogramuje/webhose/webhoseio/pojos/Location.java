@@ -22,9 +22,11 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
-                "name='" + name + '\'' +
-                ", sentiment='" + sentiment + '\'' +
-                '}';
+        return new StringBuffer()
+                .append("Location{").append("\n")
+                .append("   name='").append(name).append('\'').append(",").append("\n")
+                .append("   sentiment='").append(sentiment).append('\'').append(",").append("\n")
+                .append('}').append("\n")
+                .toString();
     }
 }

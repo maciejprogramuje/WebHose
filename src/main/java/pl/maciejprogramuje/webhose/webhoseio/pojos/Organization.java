@@ -22,9 +22,11 @@ public class Organization {
 
     @Override
     public String toString() {
-        return "Organization{" +
-                "name='" + name + '\'' +
-                ", sentiment='" + sentiment + '\'' +
-                '}';
+        return new StringBuffer()
+                .append("Organization{").append("\n")
+                .append("   name='").append(name).append(",").append("\n")
+                .append("   sentiment='").append(sentiment).append('\'').append("\n")
+                .append('}').append("\n")
+                .toString();
     }
 }
